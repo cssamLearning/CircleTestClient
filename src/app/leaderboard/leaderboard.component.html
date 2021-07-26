@@ -1,0 +1,45 @@
+<div class="container card highlight-card card-small">
+<span *ngIf="currentPlayerName">{{ currentPlayerName }} is logged in!
+<button mat-fab color="Warn" (click)="logout()">Logout</button></span>
+</div>
+<div class="jumbotron">
+  <div class="row">
+    <div class="img-responsive mx-auto">
+      <img alt="Circle Cardiovascular Imaging" class="img-responsive text-center" src="../assets/img/brand/logo.png" />
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <p class="mx-auto">
+      <a class="btn btn-success btn-lg" (click)="goGame()">Play Game</a>
+    </p>
+  </div>
+</div>
+    <div class="row">
+      <div class="col">
+        <h2><strong>L</strong>eaderboard</h2>
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col">Username</th>
+            <th scope="col">Games Played</th>
+            <th scope="col">Wins</th>
+            <th scope="col">Losses</th>
+            <th scope="col">Draws</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><img src="../assets/img/profile/default.png" alt="Profile Picture" class="pull-left chat-profile-image" /></td>
+            <td><span>LOREM</span></td>
+            <td><span>6</span></td>
+            <td><span>3</span></td>
+            <td><span>2</span></td>
+            <td><span>1</span></td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+

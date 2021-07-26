@@ -1,0 +1,46 @@
+<div class="container card highlight-card card-small">
+<span *ngIf="currentPlayerName">{{ currentPlayerName }} is logged in!
+<button mat-fab color="Warn" (click)="logout()">Logout</button></span>
+</div>
+<div class="row" *ngIf="currentPlayerName">
+  <div class="alert" role="alert">
+    Player {{currentPlayerName}}'s Turn
+  </div>
+</div>
+<div class="row" *ngIf="winner">
+  <div class="alert alert-success" role="alert">
+    The Winner is Player {{winner}}
+  </div>
+</div>
+<div class="row">
+  <p>
+    <a class="btn btn-success btn-lg" (click)="newGame()">New Game</a>
+  </p>
+</div>
+<div class='sidenav'>
+  <span [class.selected]='gameId === currentGameId' (click)='loadGame(gameId)' *ngFor='let gameId of games | async'>{{ gameId }}</span>
+</div>
+<div class="page-header" *ngIf="gameId">
+  <h1>{{gameId}}</h1>
+</div>
+<div *ngIf="game" class="game-area">
+
+  <div class="players">
+    <label>Players:</label>
+    <div *ngFor="let playerName of game[gameId].players">
+      {{playerName}}
+    </div>
+  </div>
+
+  <div id="game-board">
+    <div *ngFor="let row of game[gameId].state; let x = index" class="game-row">
+      <div *ngFor="let col of row; let y = index" class="tile" (click)="playGame(x, y)">
+        {{ col === 0 ? '' : (col === 1 ? 'O' : 'X') }}
+      </div>
+      <br/>
+    </div>
+  </div>
+</div>
+
+
+

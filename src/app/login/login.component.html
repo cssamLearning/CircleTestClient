@@ -1,0 +1,9 @@
+<div class="form-signin" style="padding-left: 30%; padding-top: 5px;">
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <h1 class="h3 mb-3 font-weight-normal center">Please sign in</h1>
+
+      <input placeholder="Enter your name" formControlName="name" id="name" required>
+
+    <button type="submit" mat-raised-button color="warn">Login</button>
+  </form>
+</div>
